@@ -13,54 +13,111 @@
 
     <script>
         var calculator = {
-            addNumbers: function () 
+            addNumbers: function () {
                 // hint: these are strings
-                var numberOne = document.forms.inputs.numberOne.value;
-                var numberTwo = document.forms.inputs.numberTwo.value;
+                var numberOne = parseInt(document.forms.inputs.numberOne.value);
+                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne + numberTwo;
-            }
+            },
+            substractNumbers: function () {    
+                var numberOne = parseInt(document.forms.inputs.numberOne.value);
+                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne - numberTwo;
+            },
+            multiplyNumbers: function () {    
+                var numberOne = parseInt(document.forms.inputs.numberOne.value);
+                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne * numberTwo;
+            },
+            divideNumbers: function () {    
+                var numberOne = parseInt(document.forms.inputs.numberOne.value);
+                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne / numberTwo;
+            },
+        }
 
-            var calculator2 = {
-            minusNumbers: function () 
-                // hint: these are strings
-                var numberOne = document.forms.inputs.numberOne.value;
-                var numberTwo = document.forms.inputs.numberTwo.value;
-                document.forms.inputs.result.value = numberOne + numberTwo;
-            }
     </script>
 
 </head>
 
 <body>
-    <div>Header</div>
+    <body style="
+    background-color: #28a745;
+    margin: 100px;
+    ">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style></style>
+        .button {
+          border-radius: 2px;
+          background-color: #f4511e;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 22px;
+          padding: 10px;
+          width: 125px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+        
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+        
+        .button:hover span {
+          padding-right: 20px;
+        }
+        
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+        </style>
+
+    <div>Simple Calculator</div>
     <div>
        <!--
          - allow two numbers to be entered
          - show buttons for add and subtract
-         - show the result
+        - show the result
         -->
         <form name="inputs">
             <div>
-                NumberOne:
-                <input type="number" name="numberOne" class="form-control" placeholder="First number" aria-label="NumberOne" >
+                Number 1:
+                <input type="number" name="numberOne" class="form-control" placeholder="First number" aria-label="Number1" >
             </div>
             <div>
-                NumberTwo:
-                <input type="number" name="numberTwo" class="form-control" placeholder="Second number" aria-label="NumberTwo">
+                Number 2:
+                <input type="number" class="form-control" name="numberTwo" placeholder="Second number" aria-label="Number2" >
             </div>
             <div>
-                <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()" >Add</button>
-                <button type="button" class="btn btn-primary" onclick="calculator2.minusNumbers()">Substract</button>
+                <button class="button" onclick="calculator.addNumbers()"><span>Add</span></button>
+                <button class="button" onclick="calculator.substractNumbers()"><span>Substract</span></button>
+                <button class="button" onclick="calculator.multiplyNumbers()"><span>Multiply</span></button>
+                <button class="button" onclick="calculator.divideNumbers()"><span>Divide</span></button>
             </div>
+           
             <div>
-                <input name="result" value= 0 class="form-control"  />
+                <input name="result" placeholder="0" class="form-control" disabled />
             </div>
         </form>
-
-
+        
     </div>
-    <div>Footer</div>
-
+    <div>© 2020 Lin, Inc </div>
 
 </body>
 
