@@ -15,23 +15,23 @@
         var calculator = {
             addNumbers: function () {
                 // hint: these are strings
-                var numberOne = parseInt(document.forms.inputs.numberOne.value);
-                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne + numberTwo;
             },
             substractNumbers: function () {    
-                var numberOne = parseInt(document.forms.inputs.numberOne.value);
-                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne - numberTwo;
             },
             multiplyNumbers: function () {    
-                var numberOne = parseInt(document.forms.inputs.numberOne.value);
-                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne * numberTwo;
             },
             divideNumbers: function () {    
-                var numberOne = parseInt(document.forms.inputs.numberOne.value);
-                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne / numberTwo;
             },
         }
@@ -43,52 +43,14 @@
 <body>
     <body style="
     background-color: #28a745;
-    margin: 100px;
+    margin: 80px;
     ">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style></style>
-        .button {
-          border-radius: 2px;
-          background-color: #f4511e;
-          border: none;
-          color: #FFFFFF;
-          text-align: center;
-          font-size: 22px;
-          padding: 10px;
-          width: 125px;
-          transition: all 0.5s;
-          cursor: pointer;
-          margin: 5px;
-        }
-        
-        .button span {
-          cursor: pointer;
-          display: inline-block;
-          position: relative;
-          transition: 0.5s;
-        }
-        
-        .button span:after {
-          content: '\00bb';
-          position: absolute;
-          opacity: 0;
-          top: 0;
-          right: -20px;
-          transition: 0.5s;
-        }
-        
-        .button:hover span {
-          padding-right: 20px;
-        }
-        
-        .button:hover span:after {
-          opacity: 1;
-          right: 0;
-        }
-        </style>
+    </body>
 
-    <div>Simple Calculator</div>
+    <div>
+        <h1>Simple Calculator</h1>
+    </div>
     <div>
        <!--
          - allow two numbers to be entered
@@ -97,25 +59,25 @@
         -->
         <form name="inputs">
             <div>
-                Number 1:
+                <h2>Number 1:</h2>
                 <input type="number" name="numberOne" class="form-control" placeholder="First number" aria-label="Number1" >
             </div>
             <div>
-                Number 2:
+                <h2>Number 2:</h2>
                 <input type="number" class="form-control" name="numberTwo" placeholder="Second number" aria-label="Number2" >
             </div>
             <div>
-                <button class="button" onclick="calculator.addNumbers()"><span>Add</span></button>
-                <button class="button" onclick="calculator.substractNumbers()"><span>Substract</span></button>
-                <button class="button" onclick="calculator.multiplyNumbers()"><span>Multiply</span></button>
-                <button class="button" onclick="calculator.divideNumbers()"><span>Divide</span></button>
+                <button type="button" class="btn btn-danger" onclick="calculator.addNumbers()">Add</button>
+                <button type="button" class="btn btn-warning" onclick="calculator.substractNumbers()">Substract</button>
+                <button type="button" class="btn btn-primary" onclick="calculator.multiplyNumbers()">Multiply</button>
+                <button type="button" class="btn btn-dark" onclick="calculator.divideNumbers()">Divide</button>
             </div>
            
             <div>
-                <input name="result" placeholder="0" class="form-control" disabled />
+                <input name="result" value="0" class="form-control" disabled />
             </div>
         </form>
-        
+
     </div>
     <div>© 2020 Lin, Inc </div>
 
