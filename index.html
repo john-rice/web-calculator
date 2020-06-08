@@ -53,6 +53,17 @@
 
                 // Do our calculation..
                 document.forms.inputs.result.value = parseInt(numberOne) / parseInt(numberTwo);
+            },
+
+            //Make a script to flip the numbers
+            flipNumbers: function () {
+                // Pull the current numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Apply them on opposite fields
+                document.forms.inputs.numberOne.value = numberTwo;
+                document.forms.inputs.numberTwo.value = numberOne;
             }
         };
     </script>
@@ -93,30 +104,32 @@ show buttons for add and subtract
                     aria-describedby="basic-addon1" name="numberTwo"></input>
             </div>
 
-            
-                <!-- Create the function buttons -->
-                <div class="btn-group" role="Group" style="padding-bottom: 15px;margin:0 auto;">
+
+            <!-- Create the function buttons -->
+            <div class="btn-group" role="Group" style="padding-bottom: 15px;margin:0 auto;">
                 <button type="button" onclick="calculator.addNumbers()" class="btn btn-primary">Add (+)</button>
                 <button type="button" onclick="calculator.subtractNumbers()" class="btn btn-primary">Subtract
                     (-)</button>
                 <button type="button" onclick="calculator.multiplyNumbers()" class="btn btn-primary">Multiply
                     (x)</button>
                 <button type="button" onclick="calculator.divideNumbers()" class="btn btn-primary">Divide (÷)</button>
+                <button type="button" onclick="calculator.flipNumbers()" class="btn btn-success">Swap Numbers</button>
                 <button type="button" onclick="window.location.reload()" class="btn btn-danger">Clear
                     Calculator</button>
+
             </div>
             <!-- Display the result! -->
-        <div class="card-footer">
-            <div class="input-group mb-3" style="max-width: 98%;margin:0 auto;">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1" >Result:</span>
+            <div class="card-footer">
+                <div class="input-group mb-3" style="max-width: 98%;margin:0 auto;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Result:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="0" aria-label="Result"
+                        aria-describedby="basic-addon1" name="result" disabled></input>
                 </div>
-                <input type="text" class="form-control" placeholder="0" aria-label="Result"
-                    aria-describedby="basic-addon1" name="result" disabled></input>
             </div>
         </div>
- </div>
- </form>
+    </form>
     <!-- Footer -->
     <footer class="footer fixed-bottom" style="background-color: #36393D; padding:15px;">
         <div class="container text-center">
