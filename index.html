@@ -15,11 +15,14 @@
         var calculator = {
             addNumbers: function () {
                 // hint: these are strings
-                var numberOne = document.forms.inputs.numberOne.value;
-                var numberTwo = document.forms.inputs.numberTwo.value;
+                var numberOne = parseInt(document.forms.inputs.numberOne.value);
+                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne + numberTwo;
             },
             subtractNumbers: function () {
+                var numberOne = parseInt(document.forms.inputs.numberOne.value);
+                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne - numberTwo;
                 
             }
         }
@@ -29,7 +32,7 @@
 </head>
 
 <body>
-    <div>Header</div>
+    <div >Header</div>
     <div>
        <!--
          - allow two numbers to be entered
@@ -47,7 +50,7 @@
             </div>
             <div>
                 <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()" >Add</button>
-                <button type="button" class="btn btn-primary">Substract</button>
+                <button type="button" class="btn btn-primary" onclick="calculator.subtractNumbers()" >Substract</button>
             </div>
             <div>
                 <input name="result" value="0" class="form-control" disabled />
