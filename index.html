@@ -25,28 +25,57 @@
     </style>
 
     <script>
-        var calculator = {
+        //  var calculator = {
+        //    addNumbers: function () {
+        //         
+        //  hint: these are strings
+        //    var numberOne = parseInt(document.forms.inputs.numberOne.value);
+        //    var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+        //    document.forms.inputs.result.value = numberOne + numberTwo;
+        //},
+        // subtractNumbers: function () {
+
+        //   var numberOne = parseInt(document.forms.inputs.numberOne.value);
+        //   var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+        //   document.forms.inputs.result.value = numberOne - numberTwo;
+
+        //     },
+        // }
+
+        let calculator = {
             addNumbers: function () {
-                // hint: these are strings
-                var numberOne = parseInt(document.forms.inputs.numberOne.value);
-                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                let numberOne = parseInt(document.forms.inputs.numberOne.value);
+                let numberTwo = parseInt(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne + numberTwo;
             },
+
             subtractNumbers: function () {
-
-                var numberOne = parseInt(document.forms.inputs.numberOne.value);
-                var numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                let numberOne = parseInt(document.forms.inputs.numberOne.value);
+                let numberTwo = parseInt(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne - numberTwo;
-
             },
+
+            multiplyNumbers: function () {
+                let numberOne = parseInt(document.forms.inputs.numberOne.value);
+                let numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne * numberTwo;
+            },
+
+            divideNumbers: function () {
+                let numberOne = parseInt(document.forms.inputs.numberOne.value);
+                let numberTwo = parseInt(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne / numberTwo;
+            }
         }
+
+
 
     </script>
 
 </head>
 
 <body>
-    <H1>The World's Best Calculator</H1>
+    <H1>Calculator 1.2</H1>
     <div>
         <!--
          - allow two numbers to be entered
@@ -69,6 +98,11 @@
                     onclick="calculator.addNumbers()">Add</button>
                 <button type="button" class="btn btn-primary" padding: 50px 25px
                     onclick="calculator.subtractNumbers()">Subtract</button>
+                <button type="button" class="btn btn-secondary" padding: 50px 25px
+                    onclick="calculator.multiplyNumbers()">Multiply</button>
+                <button type="button" class="btn btn-secondary" padding: 50px 25px
+                    onclick="calculator.divideNumbers()">Divide</button>
+
             </div>
             <div>
                 <input name="result" value="∅" class="form-control" disabled />
