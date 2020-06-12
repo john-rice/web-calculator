@@ -40,10 +40,11 @@
             border-style: ridge;
             color: bisque;
             font-weight: bold;
+            width: 20%;
         }
 
         .space {
-            padding-left: 50px;
+            padding-left: 13px;
         }
 
         .result {
@@ -63,6 +64,16 @@
                 var numberOne = document.forms.inputs.numberOne.value;
                 var numberTwo = document.forms.inputs.numberTwo.value;
                 document.forms.inputs.result.value = parseInt(numberOne) - parseInt(numberTwo);
+            },
+            multiplyNumbers: function () {
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) * parseInt(numberTwo);
+            },
+            divideNumbers: function () {
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) / parseInt(numberTwo);
             }
         }
 
@@ -89,9 +100,11 @@
                 <input type="number" class="form-control" name="numberTwo" placeholder="Second number"
                     aria-label="Number2">
             </div>
-            <button type="button" class="btn" onclick="calculator.addNumbers()">Add</button>
             <span class="space"></span>
-            <button type="button" class="btn" onclick="calculator.subtractNumbers()">Subtract</button>
+            <button type="button" class="btn" onclick="calculator.addNumbers()">+</button>
+            <button type="button" class="btn" onclick="calculator.subtractNumbers()">-</button>
+            <button type="button" class="btn" onclick="calculator.multiplyNumbers()">x</button>
+            <button type="button" class="btn" onclick="calculator.divideNumbers()">/</button>
     </div>
     <div class="result">
         <input name="result" value="0" class="form-control" disabled />
