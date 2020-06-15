@@ -9,7 +9,12 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <style>
-
+        .numbers {
+            background-color: white;
+            border-style: solid;
+            height: 50px;
+            width: 60px;
+        }
     </style>
 
     <script>
@@ -23,11 +28,20 @@
                 document.forms.inputs.result.value = num1 + num2;
             },
             subtractNumbers: function () {
-                // hint: these are strings
                 var numberOne = document.forms.inputs.numberOne.value;
                 var numberTwo = document.forms.inputs.numberTwo.value;
                 document.forms.inputs.result.value = numberOne - numberTwo;
 
+            },
+            multiplyNumbers: function () {
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = numberOne * numberTwo;
+            },
+            divideNumbers: function () {
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = numberOne / numberTwo;
             }
         }
 
@@ -35,44 +49,37 @@
 
 </head>
 
-<body style="background-color: aliceblue;">
-    <h1 class="mx-auto" style="width: 200px;">Add &
-        Subtract</h1>
-
+<body>
+    <h1 class="mx-auto" style="width: 200px;">Calculator</h1>
     <div style="font-family: 'Courier New', Courier, monospace;">
         <!--
          - allow two numbers to be entered
          - show buttons for add and subtract
          - show the result
         -->
-        <form name="inputs">
-            <div class="mx-auto" style="width: 200px;">
+        <form name="inputs" class="mx-auto" style="width: 200px;">
+            <div>
                 Number 1:
-                <input type="number" name="numberOne" class="container-sm" placeholder="1st number" aria-label="Number1"
-                    class="w-50 p-3" style="background-color: white;" class="h-50 d-inline-block">
-
+                <input type="number" name="numberOne" class="numbers" placeholder="#" aria-label="Number1">
             </div>
-            <div class="mx-auto" style="width: 200px;" style="font-family: 'Courier New', Courier, monospace;">
+            <div>
                 Number 2:
-                <input type="number" name="numberTwo" class="container-sm" placeholder="2nd number" aria-label="Number1"
-                    class="w-50 p-3" style="background-color: white;" class="h-50 d-inline-block">
+                <input type="number" class="numbers" name="numberTwo" placeholder="#">
             </div>
-            <div class="mx-auto" style="width: 200px;" style="font-family: 'Courier New', Courier, monospace;">
-                <button type=" button" class="btn btn-secondary" style="margin-top: .3cm;"
-                    onclick="calculator.addNumbers()">Add</button>
-                <button type="button" class="btn btn-secondary" style="margin-top: .3cm"
-                    onclick="calculator.subtractNumbers()">Subtract</button>
-
+            <div>
+                <button type="button" class="btn btn-secondary" onclick="calculator.addNumbers()">+</button>
+                <button type="button" class="btn btn-secondary" onclick="calculator.subtractNumbers()">-</button>
+                <button type="button" class="btn btn-secondary" onclick="calculator.multiplyNumbers()">*</button>
+                <button type="button" class="btn btn-secondary" onclick="calculator.divideNumbers()">/</button>
             </div>
-            <div class="mx-auto" style="width: 200px;">
-                <input name="result" value="0" disabled class="container-sm" class="w-50 p-3"
-                    style="background-color: white;" class="h-50 d-inline-block">
+            <div>
+                <input name="result" value="0" class="form-control" disabled />
             </div>
         </form>
 
 
     </div>
-    <div class="mx-auto" style="width: 200px;" style="font-family: 'Courier New', Courier, monospace;">Calculator</div>
+    <div class="mx-auto" style="width: 200px;">Footer</div>
 
 
 </body>
