@@ -11,6 +11,15 @@
     <style>
         body {
             background-color: bisque;
+            line-height: 1.5em;
+            margin: 0;
+
+
+        }
+
+        .pageBox {
+            border-radius: 10px;
+            border-style: double;
         }
 
         h1 {
@@ -18,9 +27,28 @@
 
         }
 
-        sub {
-            color: brown;
+        .footer {
+            position: static;
             text-align: center;
+            color: brown;
+
+        }
+
+        .numberEnter {
+            margin: 60px;
+            border-style: dashed;
+        }
+
+        .result {
+            margin: 60px;
+
+        }
+
+        .buttons {
+
+            margin: 10px;
+            padding: 25px 50px;
+            position: relative;
         }
     </style>
 
@@ -75,44 +103,47 @@
 </head>
 
 <body>
-    <H1>Calculator 1.2</H1>
-    <div>
-        <!--
-         - allow two numbers to be entered
-         - show buttons for add and subtract
-         - show the result
-        -->
-        <form name="inputs">
-            <div>
-                Enter Number 1:
-                <input type="number" name="numberOne" class="form-control" placeholder="First Number"
-                    aria-label="Number1">
-            </div>
-            <div>
-                Enter Number 2:
-                <input type="number" name="numberTwo" class="form-control" placeholder="Second Number"
-                    aria-label="Number2">
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary" padding: 50px 25px
-                    onclick="calculator.addNumbers()">Add</button>
-                <button type="button" class="btn btn-primary" padding: 50px 25px
-                    onclick="calculator.subtractNumbers()">Subtract</button>
-                <button type="button" class="btn btn-secondary" padding: 50px 25px
-                    onclick="calculator.multiplyNumbers()">Multiply</button>
-                <button type="button" class="btn btn-secondary" padding: 50px 25px
-                    onclick="calculator.divideNumbers()">Divide</button>
+    <div class="pageBox">
+        <H1>Calculator 1.25</H1>
+        <div>
+            <!--
+            - allow two numbers to be entered
+            - show buttons for add and subtract
+            - show the result
+            -->
+            <form name="inputs">
+                <div class="numberEnter">
+                    Enter Number 1:
+                    <input type="number" name="numberOne" class="form-control" placeholder="First Number"
+                        aria-label="Number1">
+                </div>
+                <div class="numberEnter">
+                    Enter Number 2:
+                    <input type="number" name="numberTwo" class="form-control" placeholder="Second Number"
+                        aria-label="Number2">
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()">+</button>
+                    <button type="button" class="btn btn-primary" onclick="calculator.subtractNumbers()">-</button>
+                    <button type="button" class="btn btn-secondary" onclick="calculator.multiplyNumbers()">x</button>
+                    <button type="button" class="btn btn-secondary" onclick="calculator.divideNumbers()">÷</button>
 
-            </div>
-            <div>
-                <input name="result" value="∅" class="form-control" disabled />
-            </div>
-        </form>
+                </div>
+                <div class="result">
+                    Result:
+                    <input name="result" value="∅" class="form-control" disabled />
+                </div>
+            </form>
 
 
+        </div>
+
+        <div class="footer">
+
+            <sub>HelloWorld™</sub>
+
+        </div>
     </div>
-    <sub>HelloWorld™</sub>
-
 
 </body>
 
