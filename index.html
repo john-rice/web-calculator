@@ -13,16 +13,34 @@
 
     <script>
         var calculator = {
-            addNumbers: function () {
+            addNumbers: function (numberOne, numberTwo) {
                 // hint: these are strings
                 var numberOne = document.forms.inputs.numberOne.value;
                 var numberTwo = document.forms.inputs.numberTwo.value;
-                document.forms.inputs.result.value = numberOne + numberTwo;
+                document.forms.inputs.result.value = parseInt(numberOne) + parseInt(numberTwo);
             },
-            subtractNumbers: function () {
+            subtractNumbers: function (numberOne, numberTwo) 
+            { var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) - parseInt(numberTwo);
+            },
+                mulitplyNumbers: function (numberOne, numberTwo)
+             {var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) * parseInt(numberTwo);
+            },
+                divideNumbers: function (numberOne, numberTwo) {
+                    var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) / parseInt(numberTwo);
+            },
+
+        
+                }
+
                 
-            }
-        }
+            
+        
 
     </script>
 
@@ -34,7 +52,7 @@
        <!--
          - allow two numbers to be entered
          - show buttons for add and subtract
-         - show the result
+         - show the result 
         -->
         <form name="inputs">
             <div>
@@ -46,8 +64,11 @@
                 <input type="number" class="form-control" name="numberTwo">
             </div>
             <div>
-                <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()" >Add</button>
-                <button type="button" class="btn btn-primary">Substract</button>
+                <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()" >+</button>
+                <button type="button" class="btn btn-primary" onclick="calculator.subtractNumbers()" >-</button>
+                <button type="button" class="btn btn-primary" onclick="calculator.multiplyNumbers()" >*</button>
+                <button type="button" class="btn btn-primary" onclick="calculator.divideNumbers()" >/</button>
+                
             </div>
             <div>
                 <input name="result" value="0" class="form-control" disabled />
