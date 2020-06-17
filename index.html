@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Worlds Best Calculator</title>
+    <title>World best calculator</title>
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -15,8 +15,8 @@
         var calculator = {
             addNumbers: function () {
                 // hint: these are strings
-                var numberOne = document.forms.inputs.numberOne.value;
-                var numberTwo = document.forms.inputs.numberTwo.value;
+                var numberOne =parseInt( document.forms.inputs.numberOne.value);
+                var numberTwo =parseInt( document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne + numberTwo;
             },
             subtractNumbers: function () {
